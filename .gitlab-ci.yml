@@ -1,0 +1,8 @@
+ubuntu:
+  image: ubuntu:xenial
+  script:
+  - apt-get update -qyy
+  - apt-get install -qyy curl bc make git build-essential
+  - git clone https://github.com/assusdan/arm-cortex-linux-gnueabi-linaro_5.2 #сюда пишем путь к тулчейну на гитхаб или не на гитхаб.
+  - export PATH=$PATH:$PWD/arm-cortex-linux-gnueabi-linaro_5.2/bin/ #тут тоже меняем путь к тулчейну, в зависимости от названия
+  - arm-cortex-linux-gnueabi-gcc --version #проверяем, прописался ли тулч
